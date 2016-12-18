@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataForTests>
+    <positives>
+        <data sideA="Double.MAX_VALUE" sideB="Double.MAX_VALUE" sideC="Double.MAX_VALUE" expected="Equilateral"/>
+        <data sideA="Double.MAX_VALUE" sideB="Double.MAX_VALUE" sideC="Double.MIN_VALUE" expected="Isosceles"/>
+        <data sideA="Double.MIN_VALUE" sideB="Double.MIN_VALUE" sideC="Double.MIN_VALUE" expected="Equilateral"/>
+        <data sideA="Double.MAX_VALUE" sideB="Double.MAX_VALUE" sideC="1.0" expected="Isosceles"/>
+        <data sideA="3.0" sideB="4.0" sideC="5.0" expected="Regular"/>
+        <data sideA="100.0" sideB="100.0" sideC="100.0" expected="Equilateral"/>
+    </positives>
+
+    <negatives>
+        <withException>
+            <data sideA="Double.NaN" sideB="Double.NaN" sideC="Double.NaN"/>
+            <data sideA="Double.NaN" sideB="Double.NaN" sideC="0.0"/>
+            <data sideA="Double.NaN" sideB="-5.0" sideC="0.0"/>
+            <data sideA="Double.POSITIVE_INFINITY" sideB="Double.POSITIVE_INFINITY" sideC="Double.POSITIVE_INFINITY"/>
+            <data sideA="Double.POSITIVE_INFINITY" sideB="Double.POSITIVE_INFINITY" sideC="0.0"/>
+            <data sideA="Double.NEGATIVE_INFINITY" sideB="Double.NEGATIVE_INFINITY" sideC="Double.NEGATIVE_INFINITY"/>
+            <data sideA="Double.NEGATIVE_INFINITY" sideB="Double.NEGATIVE_INFINITY" sideC="0.0"/>
+        </withException>
+
+        <invalidValues>
+            <data sideA="1.0" sideB="2.0" sideC="3.0" expected="There is no such triangle"/>
+            <data sideA="50.0" sideB="50.0" sideC="0.0" expected="There is no such triangle"/>
+            <data sideA="0.0" sideB="0.0" sideC="0.0" expected="There is no such triangle"/>
+            <data sideA="-3.0" sideB="-4.0" sideC="-5.0" expected="There is no such triangle"/>
+            <data sideA="-3.0" sideB="-4.0" sideC="5.0" expected="There is no such triangle"/>
+            <data sideA="-3.0" sideB="4.0" sideC="5.0" expected="There is no such triangle"/>
+        </invalidValues>
+    </negatives>
+</dataForTests>
